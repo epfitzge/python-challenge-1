@@ -61,6 +61,7 @@ print("Welcome to the variety food truck.")
 # Customers may want to order multiple items, so let's create a continuous
 # loop
 place_order = True
+order_counter = 0
 while place_order:
     # Ask the customer from which menu category they want to order
     print("From which menu would you like to order? ")
@@ -136,13 +137,13 @@ while place_order:
                     
                     # Store the item name as a variable
                 sub_menu_name = menu_items[int(menu_selection)]
-                print(f"You have selected {sub_menu_name}")
+                print(f"You have selected {sub_menu_name['Item name']}")
                 
             else:
                 print("Please enter a digit from the displayed menu")
                     
                     # Ask the customer for the quantity of the menu item
-            quantity = input(f"What quantity of {sub_menu_name} would you like? If your input is invalid, your default quantity will be set to 1: ")
+            quantity = input(f"What quantity of {sub_menu_name['Item name']} would you like? If your input is invalid, your default quantity will be set to 1: ")
 
                     # Check if the quantity is a number, default to 1 if not
             if quantity.isdigit():
@@ -154,8 +155,9 @@ while place_order:
 
                     # Add the item name, price, and quantity to the order list
             order.append(sub_menu_name)
-            quantity_append = {"Quanity:", quantity}
-            order.append(quantity_append)
+            quantity_append = order[order_counter]
+            quantity_append["Quantity:"] = quantity
+            order_counter = order_counter + 1
             
 
                     # Tell the customer that their input isn't valid
@@ -205,13 +207,14 @@ print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
 # 6. Loop through the items in the customer's order
+
+
 for dictionary in order:
     for value in dictionary.values():
-        print(value)
-
-
+        (print(value))
+                
     # 7. Store the dictionary items as variables
-
+        
 
     # 8. Calculate the number of spaces for formatted printing
 
