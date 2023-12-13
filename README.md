@@ -1,4 +1,4 @@
-# python-challenge-1
+# Module 2 HW assignment: python-challenge-1
 ## Creating a menu in Python
 
 ### This exercise was desiged to accomplish the following:
